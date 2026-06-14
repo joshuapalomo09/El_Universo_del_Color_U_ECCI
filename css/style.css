@@ -1,0 +1,656 @@
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================================================== */
+:root {
+    --bg-primary: #090d16;
+    --bg-secondary: #131a2c;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-neon: #ff007f;
+    --rainbow-gradient: linear-gradient(90deg, #ff0055, #f97316, #eab308, #22c55e, #00dfca, #a855f7, #ff0055);
+    --font-family: 'Poppins', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    line-height: 1.5;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* ==========================================================================
+   2. ESTRUCTURAS DE LAYOUT (GRILLAS Y SECCIONES)
+   ========================================================================== */
+.section-fullscreen {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 1.5rem 2rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+/* ==========================================================================
+   3. MENÚ DE NAVEGACIÓN (NAVBAR)
+   ========================================================================== */
+.navbar {
+    background-color: rgba(9, 13, 22, 0.95);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--rainbow-gradient);
+    background-size: 200% 100%;
+    animation: rainbowBorder 6s linear infinite;
+}
+
+@keyframes rainbowBorder {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.text-accent { color: var(--accent-neon); }
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+}
+
+.nav-link:hover { color: #00dfca; }
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2.5px;
+    background: var(--rainbow-gradient);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after { width: 100%; }
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-main);
+}
+
+/* Botón de Idioma */
+.btn-lang {
+    background: var(--bg-secondary);
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--bg-secondary), var(--bg-secondary)), var(--rainbow-gradient);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(255, 0, 85, 0.2);
+}
+
+.btn-lang:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 223, 202, 0.4);
+}
+
+/* ==========================================================================
+   4. ELEMENTOS COMPARTIDOS (COMPONENTES)
+   ========================================================================== */
+.image-placeholder {
+    background: #1e293b;
+    border: 2px dashed #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.badge {
+    background: var(--rainbow-gradient);
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: #00dfca;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--accent-neon);
+    padding-left: 1rem;
+}
+
+.stat-card {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 16px;
+    border-top: 4px solid var(--accent-neon);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    background: var(--rainbow-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.info-box-styled {
+    background-color: var(--bg-secondary);
+    padding: 1.2rem;
+    border-radius: 12px;
+    border-bottom: 4px solid #a855f7;
+    font-size: 0.85rem;
+}
+
+.info-box-styled h4 { margin-bottom: 0.5rem; color: #00dfca;}
+
+.credentials-list { list-style: none; margin-top: 1rem; }
+.credentials-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.2rem;
+    position: relative;
+    font-size: 0.9rem;
+}
+.credentials-list li::before {
+    content: '■';
+    position: absolute;
+    left: 0;
+    color: var(--accent-neon);
+    font-size: 0.7rem;
+    top: 2px;
+}
+
+/* ==========================================================================
+   5. SECCIONES ESPECÍFICAS
+   ========================================================================== */
+/* Carrusel Hero */
+.hero-carousel { padding: 0; position: relative; overflow: hidden; }
+.carousel-container { width: 100%; height: 100%; position: relative; }
+.carousel-slide {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0; transition: opacity 1s ease-in-out;
+}
+.carousel-slide.active { opacity: 1; z-index: 1; }
+.carousel-slide .image-placeholder { width: 100%; height: 100%; border-radius: 0; border: none; background: #111827; }
+.carousel-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(9, 13, 22, 1));
+    padding: 6rem 2rem 4rem 2rem; text-align: center;
+}
+.carousel-caption h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+/* Módulo de Colores Interactivos */
+.color-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; margin: 1.5rem 0; }
+.color-dot {
+    width: 42px; height: 42px; border-radius: 50%;
+    border: 3px solid transparent; cursor: pointer; transition: var(--transition);
+}
+.color-dot:hover, .color-dot.active {
+    transform: scale(1.25); border-color: white; box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+.color-display-panel {
+    background-color: #ef4444; border-radius: 16px; padding: 2.5rem; color: white;
+    transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.5); margin-bottom: 1.5rem;
+}
+
+/* Galería de Fotos */
+.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem; width: 100%; }
+.gallery-item {
+    background-color: var(--bg-secondary); border-radius: 12px; overflow: hidden;
+    cursor: pointer; transition: var(--transition); border: 1px solid rgba(255,255,255,0.03);
+}
+.gallery-item:hover { transform: scale(1.02); }
+.gallery-box { border: none; border-radius: 0; height: 250px; background: #1e293b; overflow: hidden; }
+.gallery-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-info { padding: 1rem; font-size: 0.85rem; }
+
+/* ==========================================================================
+   6. VENTANA MODAL FLOTANTE (AMPLIADA)
+   ========================================================================== */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(5, 8, 15, 0.7); backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px); display: flex; align-items: center; justify-content: center;
+    z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; padding: 1.5rem;
+}
+
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+.modal-content {
+    background-color: var(--bg-secondary);
+    max-width: 900px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-overlay.active .modal-content { transform: translateY(0); }
+
+.modal-img-container {
+    width: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modal-img-full {
+    width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    display: block;
+}
+
+.modal-text { padding: 2rem; overflow-y: auto; }
+.modal-text h3 { margin-bottom: 0.5rem; color: #00dfca; }
+.modal-close {
+    position: absolute; top: 20px; right: 25px;
+    background: rgba(0,0,0,0.5); border: none; color: white;
+    font-size: 2.5rem; cursor: pointer; z-index: 10;
+    border-radius: 50%; width: 40px; height: 40px; display: flex;
+    align-items: center; justify-content: center; line-height: 1;
+}
+
+/* ==========================================================================
+   7. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.footer {
+    background-color: #04060a; padding: 2.5rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.05); text-align: center;
+}
+.footer-nav { margin-bottom: 1rem; }
+.footer-nav a { color: var(--text-muted); text-decoration: none; margin: 0 0.5rem; font-size: 0.85rem; }
+.footer-nav a:hover { color: var(--accent-neon); }
+.footer-info { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; }
+
+/* ==========================================================================
+   PLUS EXTRA: ESTILO CONCLUSIÓN Y EFECTO ARCOÍRIS
+   ========================================================================== */
+.conclusion-card {
+    background: var(--bg-secondary);
+    padding: 3rem;
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.reflection-text {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #00dfca;
+    margin: 2rem 0;
+    line-height: 1.6;
+}
+
+.btn-restart-rainbow {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin-bottom: 2.5rem; /* ¡Este es el margen clave para despegarlo de la imagen! */
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    background: var(--bg-primary);
+    border-radius: 50px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.btn-restart-rainbow:hover { transform: scale(1.1) rotate(1deg); }
+
+.btn-restart-rainbow::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(#ff0055, #f97316, #eab308, #22c55e, #00dfca, #a855f7, #ff0055);
+    animation: rotateRainbow 4s linear infinite;
+    z-index: -2;
+}
+
+.btn-restart-rainbow::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: var(--bg-primary);
+    border-radius: 50px;
+    z-index: -1;
+}
+
+.plus-extra-rainbow {
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    width: 80%;
+    height: 20px;
+    background: var(--rainbow-gradient);
+    filter: blur(20px);
+    opacity: 0.6;
+    border-radius: 50%;
+    animation: pulseGlow 3s infinite alternate;
+}
+
+@keyframes rotateRainbow { 100% { transform: rotate(360deg); } }
+@keyframes pulseGlow { from { transform: scale(1); opacity: 0.4; } to { transform: scale(1.2); opacity: 0.8; } }
+
+/* EFECTO ARCOÍRIS GIRATORIO PARA CUADROS DE IMÁGENES */
+.profile-box, 
+.gallery-item {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: none;
+    padding: 3px;
+}
+
+.profile-box::before,
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(#ff0055, #f97316, #eab308, #22c55e, #00dfca, #a855f7, #ff0055);
+    animation: rotateRainbow 4s linear infinite;
+    z-index: -2;
+}
+
+.profile-box::after,
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.gallery-img, 
+.profile-box img {
+    position: relative;
+    z-index: 2;
+    border-radius: 8px;
+}
+
+/* ==========================================================================
+   8. MEDIA QUERIES (LA PARTE QUE ARREGLA EL CELULAR TOTALMENTE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .card-row { gap: 2rem; }
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    /* 1. Navbar y Logo */
+    .nav-logo { font-size: 1.1rem; }
+    .nav-toggle { display: flex; }
+    .nav-menu {
+        display: none; flex-direction: column; position: absolute;
+        top: 100%; left: 0; width: 100%; background: var(--bg-primary);
+        padding: 2rem; text-align: center; border-bottom: 3px solid var(--accent-neon);
+    }
+    .nav-menu.active { display: flex; }
+
+    /* 2. Secciones (Cambiado de Flex a Block para que el texto baje) */
+    .section-fullscreen { 
+        height: auto; 
+        display: block; 
+        padding: 100px 1.2rem 50px 1.2rem; 
+    }
+
+    /* 3. Grillas a una sola columna */
+    .card-row, .grid-2, .grid-3, .gallery-grid { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+    }
+
+    /* 4. Imágenes (Ajuste de tamaño en móvil para que no ocupen toda la pantalla) */
+    .profile-box { 
+        max-width: 300px; 
+        margin: 0 auto 2rem auto; 
+        height: 350px;
+    }
+    
+    /* 5. Carrusel (Evitar que el texto tape la cara de la gente) */
+    .hero-carousel { height: 60vh; }
+    .carousel-caption h1 { font-size: 1.8rem; }
+    .carousel-caption p { font-size: 0.9rem; }
+
+    /* 6. Conclusión */
+    .conclusion-card { padding: 2rem 1rem; }
+    .reflection-text { font-size: 1.1rem; }
+
+    /* 7. Modal */
+    .modal-content { width: 95%; }
+    .modal-text { padding: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes finales para pantallas muy pequeñas */
+    .nav-container { padding: 0.8rem 0.8rem; }
+    .btn-lang { padding: 0.3rem 0.6rem; font-size: 0.8rem; }
+    .stat-number { font-size: 2.2rem; }
+    .color-display-panel { padding: 1.5rem 1rem; }
+}
+
+/* ==========================================================================
+   NUEVA SECCIÓN: CONCEPTOS (ESTILOS Y RESPONSIVE)
+   ========================================================================== */
+
+/* Añadimos el efecto arcoíris a las nuevas tarjetas de conceptos */
+.profile-box, 
+.gallery-item,
+.concept-card {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: none;
+    padding: 3px;
+}
+
+.profile-box::before,
+.gallery-item::before,
+.concept-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(#ff0055, #f97316, #eab308, #22c55e, #00dfca, #a855f7, #ff0055);
+    animation: rotateRainbow 4s linear infinite;
+    z-index: -2;
+}
+
+.profile-box::after,
+.gallery-item::after,
+.concept-card::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    z-index: -1;
+}
+
+/* El contenido interno de la tarjeta de conceptos */
+.concept-content {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.concept-content h4 {
+    color: var(--accent-teal);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.concept-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Cuadrícula de los Conceptos y Botones de Filtro */
+.concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.concept-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--accent-neon);
+    color: var(--text-main);
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--accent-neon);
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+}
+
+/* Media Queries para Responsive de los Conceptos */
+@media (max-width: 1024px) {
+    .concepts-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .concepts-grid { grid-template-columns: 1fr; }
+    .concept-filters { flex-direction: column; align-items: stretch; }
+    .filter-btn { padding: 0.8rem; }
+}

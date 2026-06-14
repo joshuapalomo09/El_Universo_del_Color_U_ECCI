@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLOR | Conferencia ECCI</title>
+    <link rel="shortcut icon" href="img/FAVICON.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">COLOR<span class="text-accent">.ECCI</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#ponente" data-key="nav-ponente" class="nav-link">Conferencista</a></li>
+                <li><a href="#conferencia" data-key="nav-sobre" class="nav-link">Sobre la Conferencia</a></li>
+                <li><a href="#teoria" data-key="nav-teoria" class="nav-link">Universo Cromático</a></li>
+                <li><a href="#galeria" data-key="nav-galeria" class="nav-link">Galería</a></li>
+                <li><a href="#conceptos" data-key="nav-conceptos" class="nav-link">Conceptos</a></li>
+                <li><a href="#resumen" data-key="nav-resumen" class="nav-link">Resumen</a></li>
+            </ul>
+            <button id="langToggle" class="btn-lang">
+                <span id="btnFlag">🇨🇴</span> <span id="btnText">ES</span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="section-fullscreen hero-carousel" id="">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <div class="image-placeholder">
+                    <span><img src="img/introEcci3.jpg" alt="" width="1900" height="1100"></span>
+                </div>
+                <div class="carousel-caption">
+                    <h1 data-key="hero-title-1">COLOR: Lenguaje Caprichoso y Estratégico</h1>
+                    <p data-key="hero-desc-1">Explorando el impacto del diseño visual en la Universidad ECCI.</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <div class="image-placeholder">
+                    <span><img src="img/introEcci2.jpeg" alt="" width="1900" height="1300"></span>
+                </div>
+                <div class="carousel-caption">
+                    <h1 data-key="hero-title-2">Ciencia y Emoción</h1>
+                    <p data-key="hero-desc-2">El cruce perfecto entre física, fisiología y respuestas biológicas.</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <div class="image-placeholder">
+                    <span><img src="img/introEcci1.jpeg" alt="" width="1900" height="1300"></span>
+                </div>
+                <div class="carousel-caption">
+                    <h1 data-key="hero-title-3">Diseño Inclusivo y Accesible</h1>
+                    <p data-key="hero-desc-3">Garantizando experiencias web democráticas para el 100% de los usuarios.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="ponente" class="section-fullscreen">
+        <div class="grid-container card-row">
+            <div class="section-image-box">
+                <div class="image-placeholder profile-box">
+                    <span><img src="img/conferencista.jpg" alt=" "width="600" height="600"></span>
+                </div>
+            </div>
+            <div class="section-info-box">
+                <span class="badge" data-key="badge-ponente">Invitada Magistral</span>
+                <h2 data-key="title-ponente">Sara Viloria</h2>
+                <p class="subtitle">Buenos Aires, Argentina</p>
+                <p class="bio-intro" data-key="desc-ponente">Una autoridad multidisciplinar en el mundo del color. Pintora, poeta, escritora y curadora de arte orientada a la expresión territorial.</p>
+                
+                <ul class="credentials-list">
+                    <li><strong data-key="c1-title">Credenciales:</strong> <span data-key="c1-desc">Licenciada en Artes Visuales, diplomada en Ilustración y Arte en su expresión territorial.</span></li>
+                    <li><strong data-key="c2-title">Certificación Internacional:</strong> <span data-key="c2-desc">Colorista Certificada por Leatrice Eiseman (Directora Ejecutiva de Pantone Color Institute).</span></li>
+                    <li><strong data-key="c3-title">Trayectoria:</strong> <span data-key="c3-desc">Ex Coordinadora de educación del Museo de Artes Visuales (MAVI) de Santiago y mediadora cultural.</span></li>
+                    <li><strong data-key="c4-title">Faceta Literaria:</strong> <span data-key="c4-desc">Ganadora de la Beca Fundación Neruda (2021) y el premio Lily Peter Fellowship (USA). Autora de los libros "Color y Acuarela" y "Cartas para Siena".</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="conferencia" class="section-fullscreen">
+        <div class="grid-container text-center max-w-800">
+            <h2 data-key="title-sobre">El Color: Un Lenguaje Caprichoso y Estratégico</h2>
+            <blockquote class="quote">
+                "Es más fácil definir cómo nos hace sentir un color, que explicar lo que significa en sí mismo."
+            </blockquote>
+            <p class="text-description" data-key="desc-sobre">La conferencia exploró el color no solo como un fenómeno óptico, sino como un puente directo hacia las emociones humanas. Como se debatió en la charla, a menudo "es más fácil definir cómo nos hace sentir un color, que explicar lo que significa en sí mismo". La ponencia navegó entre las definiciones físicas tradicionales (como las de la RAE o el Oxford Dictionary) y la realidad práctica: el color es un lenguaje poderoso, a veces caprichoso, que dicta nuestras decisiones, moldea nuestra cultura y define nuestro entorno.</p>
+
+            <div class="grid-2 mt-4">
+                <div class="stat-card">
+                    <div class="stat-number">85%</div>
+                    <p data-key="stat-1">De las decisiones de compra de los consumidores se ven influenciadas directamente por el color.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">80%</div>
+                    <p data-key="stat-2">De incremento en el reconocimiento e identidad corporativa de una marca al usar el color estratégico.</p>
+                </div>
+                <div class="image-placeholder profile-box">
+                    <span><img src="img/conferencia1 (1).jpeg" alt=" "width="450" height="300"></span>
+                </div>
+                <div class="image-placeholder profile-box">
+                    <span><img src="img/conferencia1 (2).jpeg" alt=" "width="450" height="300"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="teoria" class="section-fullscreen interactive-color-section">
+        <div class="grid-container text-center">
+            <h2 data-key="title-teoria">Psicología & Teoría del Color</h2>
+            <p data-key="desc-teoria2">Cada tono evoca asociaciones culturales y respuestas biológicas específicas. (Aporte extra: es importante recordar que estas percepciones pueden variar según la cultura, pero en el mundo. Un buen uso del color debe ser democrático. Las normativas web actuales (WCAG 2.1) exigen que el color no sea el único medio para transmitir información.</p>
+
+            <p data-key="desc-teoria">Haz clic en los botones de colores para interactuar y explorar los significados emocionales occidentales analizados en la conferencia.</p>
+           
+            <div class="color-tabs">
+                <button class="color-dot active" style="background-color: #ef4444;" data-color="rojo" aria-label="Rojo"></button>
+                <button class="color-dot" style="background-color: #f97316;" data-color="naranja" aria-label="Naranja"></button>
+                <button class="color-dot" style="background-color: #eab308;" data-color="yellow" aria-label="Amarillo"></button>
+                <button class="color-dot" style="background-color: #22c55e;" data-color="verde" aria-label="Verde"></button>
+                <button class="color-dot" style="background-color: #3b82f6;" data-color="azul" aria-label="Azul"></button>
+                <button class="color-dot" style="background-color: #a855f7;" data-color="morado" aria-label="Morado"></button>
+            </div>
+
+            <div class="color-display-panel" id="colorPanel">
+                <div class="panel-content">
+                    <h3 id="panelColorTitle" data-key="color-rojo-t">Rojo (Pasión, Energía, Urgencia)</h3>
+                    <p id="panelColorDesc" data-key="color-rojo-d">Ideal para llamados a la acción y rebajas. Estimula de forma inmediata las respuestas biológicas y el apetito visual.</p>
+                </div>
+            </div>
+
+            <div class="grid-3 mt-3">
+                <div class="info-box-styled">
+                    <h4 data-key="h-origen">El Origen de la Rueda</h4>
+                    <p data-key="p-origen">Isaac Newton descompuso la luz blanca a través de un prisma, identificando 7 colores fundamentales y uniendo los extremos para crear el círculo cromático.</p>
+                </div>
+                <div class="info-box-styled">
+                    <h4 data-key="h-modelo">Modelo RYB Tradicional</h4>
+                    <p data-key="p-modelo"><strong>Primarios:</strong> Rojo, Amarillo, Azul.<br><strong>Secundarios:</strong> Naranja, Verde, Morado.</p>
+                </div>
+                <div class="info-box-styled">
+                    <h4 data-key="h-armonia">Armonías Exitosas</h4>
+                    <p data-key="p-armonia">Estrategias visuales clave: Complementaria (contraste), Análoga (vecinos), Triádica (vibrante) y Monocromática (minimalismo).</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="galeria" class="section-fullscreen">
+        <div class="grid-container text-center">
+            <h2 data-key="title-galeria">Galería de la Conferencia</h2>
+            <p data-key="desc-galeria" class="mb-2">Haz clic sobre las fotos para ver los detalles de nuestra experiencia en la ECCI.</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-title-es="Comunidad ECCI en Formación" data-title-en="ECCI Community in Training" data-desc-es="Gran asistencia de estudiantes en el auditorio, compartiendo el espacio de aprendizaje sobre el lenguaje del color." data-desc-en="Large student attendance in the auditorium, sharing the learning space about the language of color.">
+                    <div class="gallery-box"><img src="img/GALERIA1 (5).jpeg" alt="Público" class="gallery-img"></div>
+                    <div class="gallery-info"><h4 data-key="g1-t">Comunidad ECCI en Formación</h4></div>
+                </div>
+                <div class="gallery-item" data-title-es="Equipo ADSO: Futuro y Diseño" data-title-en="ADSO Team: Future and Design" data-desc-es="Grupo de compañeros de la Universidad ECCI asistentes a la conferencia magistral de color." data-desc-en="Group of colleagues from ECCI University attending the keynote color conference.">
+                    <div class="gallery-box"><img src="img/GALERIA1 (6).jpeg" alt="Compañeros" class="gallery-img"></div>
+                    <div class="gallery-info"><h4 data-key="g2-t">Equipo ADSO: Futuro y Diseño</h4></div>
+                </div>
+                <div class="gallery-item" data-title-es="Identidad de la Conferencia" data-title-en="Conference Identity" data-desc-es="Apertura del evento académico con el respaldo de la Universidad ECCI en Bogotá." data-desc-en="Opening of the academic event with the support of ECCI University in Bogotá.">
+                    <div class="gallery-box"><img src="img/GALERIA1 (7).jpeg" alt="Pantalla" class="gallery-img"></div>
+                    <div class="gallery-info"><h4 data-key="g3-t">Identidad de la Conferencia</h4></div>
+                </div>
+                <div class="gallery-item" data-title-es="Perfil de la Ponente" data-title-en="Speaker Profile" data-desc-es="Detalle de la trayectoria de Sara Viloria, destacando su certificación internacional de Pantone." data-desc-en="Detail of Sara Viloria's career, highlighting her international Pantone certification.">
+                    <div class="gallery-box"><img src="img/GALERIA1 (8).jpeg" alt="Sara Bio" class="gallery-img"></div>
+                    <div class="gallery-info"><h4 data-key="g4-t">Perfil de la Ponente</h4></div>
+                </div>
+                <div class="gallery-item" data-title-es="Semántica vs. Emoción" data-title-en="Semantics vs. Emotion" data-desc-es="Análisis de cómo un diccionario define el color físicamente frente a cómo lo percibimos emocionalmente." data-desc-en="Analysis of how a dictionary defines color physically versus how we perceive it emotionally.">
+                    <div class="gallery-box"><img src="img/GALERIA1 (2).jpeg" alt="Diapositiva Manzana" class="gallery-img"></div>
+                    <div class="gallery-info"><h4 data-key="g5-t">Semántica vs. Emoción</h4></div>
+                </div>
+                <div class="gallery-item" data-title-es="Legado de Isaac Newton" data-title-en="Isaac Newton's Legacy" data-desc-es="Exploración científica del círculo cromático original y la descomposición de la luz en el laboratorio." data-desc-en="Scientific exploration of the original color wheel and the decomposition of light in the laboratory.">
+                    <div class="gallery-box"><img src="img/GALERIA1 (1).jpeg" alt="Newton" class="gallery-img"></div>
+                    <div class="gallery-info"><h4 data-key="g6-t">Legado de Isaac Newton</h4></div>
+                </div>
+                <div class="gallery-item" data-title-es="Psicología y Percepción" data-title-en="Psychology and Perception" data-desc-es="Diapositiva interactiva sobre las asociaciones psicológicas y cómo el cerebro interpreta los tonos." data-desc-en="Interactive slide on psychological associations and how the brain interprets tones.">
+                    <div class="gallery-box"><img src="img/GALERIA1 (3).jpeg" alt="Psicología" class="gallery-img"></div>
+                    <div class="gallery-info"><h4 data-key="g7-t">Psicología y Percepción</h4></div>
+                </div>
+                <div class="gallery-item" data-title-es="El Color en el Arte" data-title-en="Color in Art" data-desc-es="Aplicación de teorías cromáticas en obras maestras, analizando la armonía y el contraste en el arte." data-desc-en="Application of color theories in masterpieces, analyzing harmony and contrast in art.">
+                    <div class="gallery-box"><img src="img/GALERIA1 (4).jpeg" alt="Picasso" class="gallery-img"></div>
+                    <div class="gallery-info"><h4 data-key="g8-t">El Color en el Arte</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conceptos" class="section-fullscreen">
+        <div class="grid-container text-center">
+            <h2 data-key="title-conceptos">Glosario Cromático</h2>
+            <p data-key="desc-conceptos" class="mb-2">Explora y filtra los términos fundamentales analizados durante la conferencia.</p>
+            
+            <div class="concept-filters">
+                <button class="filter-btn active" data-filter="all" data-key="btn-all">Todos</button>
+                <button class="filter-btn" data-filter="ciencia" data-key="btn-ciencia">Ciencia y Teoría</button>
+                <button class="filter-btn" data-filter="psicologia" data-key="btn-psico">Psicología y Emoción</button>
+                <button class="filter-btn" data-filter="historia" data-key="btn-historia">Historia y Aplicación</button>
+            </div>
+
+            <div class="concepts-grid">
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c1-t">Teoría del Color</h4>
+                        <p data-key="c1-d">Conjunto de reglas, principios y directrices que explican la percepción visual de la luz, la interacción entre los tonos y su combinación armónica.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c2-t">Espectro Visible</h4>
+                        <p data-key="c2-d">Franja de luz que el ojo humano puede percibir, descubierta por Isaac Newton al descomponer la luz blanca a través de un prisma.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c3-t">Longitud de Onda</h4>
+                        <p data-key="c3-d">Propiedad física de la luz que determina el color exacto que perciben nuestros órganos visuales (definición técnica avalada por la RAE).</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c4-t">Círculo Cromático (Rueda de Color)</h4>
+                        <p data-key="c4-d">Representación visual y circular de los colores organizados según su relación cromática, originada a partir de los estudios de Newton.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c5-t">Colores Primarios (RYB)</h4>
+                        <p data-key="c5-d">Rojo, Amarillo y Azul. Son los colores puros y fundamentales de los cuales nacen todos los demás en la mezcla de pigmentos.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c6-t">Colores Secundarios</h4>
+                        <p data-key="c6-d">Tonos (Naranja, Verde, Morado) resultantes de la mezcla exacta al 50% de dos colores primarios.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c7-t">Colores Terciarios</h4>
+                        <p data-key="c7-d">Tonos intermedios o "puente" obtenidos al mezclar un color primario con un color secundario adyacente en la rueda cromática.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c8-t">Armonía Complementaria</h4>
+                        <p data-key="c8-d">Combinación de colores que se encuentran en posiciones exactamente opuestas dentro del círculo cromático, generando alto contraste.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c9-t">Armonía Análoga</h4>
+                        <p data-key="c9-d">Agrupación de tres colores vecinos o consecutivos en la rueda cromática, creando una estética serena y natural.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c10-t">Armonía Triádica</h4>
+                        <p data-key="c10-d">Uso de tres colores que forman un triángulo equilátero en el círculo cromático, logrando un diseño vibrante pero equilibrado.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c11-t">Armonía Tetrádica</h4>
+                        <p data-key="c11-d">Combinación compleja que utiliza cuatro colores dispuestos en forma de rectángulo (dos pares complementarios).</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="ciencia">
+                    <div class="concept-content">
+                        <h4 data-key="c12-t">Armonía Monocromática</h4>
+                        <p data-key="c12-d">Esquema visual que utiliza un solo color base, alterando únicamente su nivel de luz (tintes) y sombra para crear profundidad.</p>
+                    </div>
+                </div>
+
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c13-t">Psicología del Color</h4>
+                        <p data-key="c13-d">Estudio de cómo los distintos colores alteran el estado de ánimo, evocan emociones e influyen en el comportamiento humano.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c14-t">Lenguaje Caprichoso</h4>
+                        <p data-key="c14-d">Concepto que define al color como un método de expresión no verbal que a menudo es más fácil de sentir que de explicar lógicamente.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c15-t">Percepción Emocional</h4>
+                        <p data-key="c15-d">La respuesta instintiva e inmediata que un usuario tiene al enfrentarse a una paleta de colores específica.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c16-t">Asociación Cultural</h4>
+                        <p data-key="c16-d">Significados y valores atribuidos a un color dependiendo de la geografía, la historia y la sociedad de quien lo observa.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c17-t">Impacto del Rojo</h4>
+                        <p data-key="c17-d">Tono asociado psicológicamente a la pasión, la energía extrema y el sentido de urgencia.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c18-t">Impacto del Naranja</h4>
+                        <p data-key="c18-d">Color que el cerebro relaciona con la creatividad vibrante, el entusiasmo, la juventud y la calidez.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c19-t">Impacto del Amarillo</h4>
+                        <p data-key="c19-d">Pigmento del optimismo, la alegría y la máxima atención visual (aunque en exceso puede causar fatiga ocular).</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c20-t">Impacto del Verde</h4>
+                        <p data-key="c20-d">Tono vinculado instintivamente a la naturaleza, la calma, el crecimiento, el equilibrio y las finanzas.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c21-t">Impacto del Azul</h4>
+                        <p data-key="c21-d">El color de la confianza, el profesionalismo, la seguridad y la serenidad; altamente utilizado en el sector corporativo.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c22-t">Impacto del Morado</h4>
+                        <p data-key="c22-d">Tono históricamente relacionado con el lujo, la realeza, el misterio y la espiritualidad.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c23-t">Fatiga Visual</h4>
+                        <p data-key="c23-d">Cansancio ocular generado por combinaciones de colores vibrantes sin descanso o por falta de contraste adecuado.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="psicologia">
+                    <div class="concept-content">
+                        <h4 data-key="c24-t">Diferenciador Emocional</h4>
+                        <p data-key="c24-d">El uso del color para separar emocionalmente a una marca o producto de sus competidores directos.</p>
+                    </div>
+                </div>
+
+                <div class="concept-card" data-category="historia">
+                    <div class="concept-content">
+                        <h4 data-key="c25-t">Decisión de Compra</h4>
+                        <p data-key="c25-d">Métrica fundamental en marketing; el color determina el 85% de las decisiones de los consumidores al adquirir un producto.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="historia">
+                    <div class="concept-content">
+                        <h4 data-key="c26-t">Reconocimiento de Marca</h4>
+                        <p data-key="c26-d">Capacidad del color corporativo para aumentar la identificación y retención de una marca en la memoria del público hasta en un 80%.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="historia">
+                    <div class="concept-content">
+                        <h4 data-key="c27-t">Estrategia de Comunicación</h4>
+                        <p data-key="c27-d">Uso planificado del color, dejando de lado la simple estética para convertirlo en una herramienta de persuasión.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="historia">
+                    <div class="concept-content">
+                        <h4 data-key="c28-t">Accesibilidad Visual</h4>
+                        <p data-key="c28-d">Práctica de diseño que garantiza que el contenido gráfico sea comprensible y navegable para todas las personas.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="historia">
+                    <div class="concept-content">
+                        <h4 data-key="c29-t">Directrices WCAG 2.1</h4>
+                        <p data-key="c29-d">Estándares internacionales de accesibilidad web que dictan las normas obligatorias para el uso del color y el contraste.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="historia">
+                    <div class="concept-content">
+                        <h4 data-key="c30-t">Ratio de Contraste</h4>
+                        <p data-key="c30-d">Medida técnica exigida en diseño web (4.5:1 para texto normal y 3:1 para texto grande) para asegurar la legibilidad.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="historia">
+                    <div class="concept-content">
+                        <h4 data-key="c31-t">Diseño Inclusivo (Daltonismo)</h4>
+                        <p data-key="c31-d">Creación de interfaces que no dependen exclusivamente del color para transmitir información crucial.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="historia">
+                    <div class="concept-content">
+                        <h4 data-key="c32-t">Pigmentos Históricos</h4>
+                        <p data-key="c32-d">Materiales de origen natural o sintético utilizados a lo largo de los siglos para teñir, pintar y comunicar.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="historia">
+                    <div class="concept-content">
+                        <h4 data-key="c33-t">Índigo Natural</h4>
+                        <p data-key="c33-d">Pigmento azul oscuro de origen botánico, clave en el desarrollo de la teoría del color de Newton y en la industria textil.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="historia">
+                    <div class="concept-content">
+                        <h4 data-key="c34-t">Verde de París (Scheele)</h4>
+                        <p data-key="c34-d">Famoso pigmento victoriano conocido por su brillo y su alta toxicidad debido a su contenido de arsénico.</p>
+                    </div>
+                </div>
+                <div class="concept-card" data-category="historia">
+                    <div class="concept-content">
+                        <h4 data-key="c35-t">Pantone (Estandarización)</h4>
+                        <p data-key="c35-d">Sistema global de identificación, comparación y comunicación del color, fundamental en las artes gráficas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="galleryModal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-content">
+            <div class="modal-img-container">
+                <img id="modalImage" src="" alt="Visualización Completa" class="modal-img-full">
+            </div>
+            <div class="modal-text">
+                <h3 id="modalTitle">Título</h3>
+                <p id="modalDesc">Descripción</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="resumen" class="section-fullscreen">
+        <div class="grid-container text-center max-w-800">
+            <div class="conclusion-card">
+                <h2 data-key="h-conclu">Conclusión del Evento</h2>
+                <p class="reflection-text" data-key="p-conclu">
+                    "El color no es solo un fenómeno visual, es la herramienta de comunicación más potente que tenemos como desarrolladores y diseñadores. Entender su estrategia nos permite crear soluciones más humanas, inclusivas y efectivas."
+                </p>
+                <div class="plus-extra-rainbow"></div> 
+                <a href="#" class="btn-restart-rainbow">
+                    <span data-key="btn-restart">Volver al Inicio y Reflexionar</span>
+                </a>
+                <div class="gallery-item" data-title-es="El Color en el Arte" data-title-en="Color in Art" data-desc-es="Aplicación de teorías cromáticas en obras maestras, analizando la armonía y el contraste en el arte." data-desc-en="Application of color theories in masterpieces, analyzing harmony and contrast in art.">
+                    <div class="gallery-box"><img src="img/resumen.jpeg" alt="Picasso" class="gallery-img"></div>
+                    <div class="gallery-info"><h4 data-key="g8-t">El Color en el Arte</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-nav">
+                <a href="#ponente" data-key="nav-ponente">Conferencista</a> | 
+                <a href="#conferencia" data-key="nav-sobre">Sobre la Conferencia</a> | 
+                <a href="#teoria" data-key="nav-teoria">Universo Cromático</a> | 
+                <a href="#galeria" data-key="nav-galeria">Galería</a> | 
+                <a href="#conceptos" data-key="nav-conceptos">Conceptos</a> | 
+                <a href="#resumen" data-key="nav-resumen">Volver al Inicio</a>
+            </div>
+            <div class="footer-info">
+                <p>Trabajo con fines educativos | ADSO | Bogotá D.C. | Universidad ECCI | 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="java/script.js"></script>
+</body>
+</html>
